@@ -1,6 +1,6 @@
 # babel-plugin-auto-import-assert
 
-Automatically adds `const assert = require("assert")` to your code, if not *import*ed/*require*d `assert` module.
+Automatically adds `var assert = require('assert');` to your code, if not *import*ed/*require*d `assert` module.
 
 ## Installation
 
@@ -84,7 +84,7 @@ Add `import assert from 'assert';` to your code.
 ```javascript
 'use strict';
 
-import assert from 'assert';
+var assert = require('assert');
 
 function add(a, b) {
     assert(!isNaN(a));
