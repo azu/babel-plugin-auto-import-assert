@@ -17,7 +17,7 @@
   },
   "version": "1.0.0",
   "description": "babel plugin that auto import assert module.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
