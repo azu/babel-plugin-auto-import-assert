@@ -1,1 +1,1 @@
-import assert from "assert";
+const assert = require("assert");

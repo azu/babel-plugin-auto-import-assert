@@ -1,19 +1,15 @@
 "use strict";
+const template = require("babel-template");
 module.exports = function ({types: t}) {
-    const AssertDefaultImport = t.importDefaultSpecifier(t.identifier('assert'));
 
-    function AssertImport() {
-        let declare = t.importDeclaration(
-            [AssertDefaultImport],
-            t.stringLiteral('assert')
-        );
-        declare._blockHoist = 3;
-
-        return declare;
-    }
+    const buildRequire = template(`const IMPORT_NAME = require(SOURCE);`);
+    const ast = buildRequire({
+        IMPORT_NAME: t.identifier("assert"),
+        SOURCE: t.stringLiteral("assert")
+    });
 
     function addAssertImport(file) {
-        file.path.unshiftContainer('body', AssertImport())
+        file.path.unshiftContainer('body', [ast])
     }
 
 

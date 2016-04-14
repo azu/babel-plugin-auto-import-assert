@@ -1,6 +1,6 @@
 # babel-plugin-auto-import-assert
 
-Automatically adds `import assert from "assert"` to your code, if not *import*ed/*require*d `assert` module.
+Automatically adds `const assert = require("assert")` to your code, if not *import*ed/*require*d `assert` module.
 
 ## Installation
 
