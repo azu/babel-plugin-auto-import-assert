@@ -68,7 +68,7 @@ module.exports = function ({types: t}) {
             ImportDeclaration: {
                 enter: function (nodePath, state) {
                     var source = nodePath.get("source");
-                    vkar firstSpecifier = nodePath.get("specifiers")[0];
+                    var firstSpecifier = nodePath.get("specifiers")[0];
                     if (!firstSpecifier.isImportDefaultSpecifier()) {
                         return;
                     }
