@@ -17,7 +17,7 @@ module.exports = function ({types: t}) {
         if (!callee.isIdentifier() || !callee.equals("name", "require")) {
             return false;
         }
-        return (arg.isLiteral() && arg.equals("value", "assert"));
+        return arg.isLiteral();
     }
 
     return {
@@ -68,10 +68,7 @@ module.exports = function ({types: t}) {
             ImportDeclaration: {
                 enter: function (nodePath, state) {
                     var source = nodePath.get("source");
-                    if (!(source.equals("value", "assert"))) {
-                        return;
-                    }
-                    var firstSpecifier = nodePath.get("specifiers")[0];
+                    vkar firstSpecifier = nodePath.get("specifiers")[0];
                     if (!firstSpecifier.isImportDefaultSpecifier()) {
                         return;
                     }
