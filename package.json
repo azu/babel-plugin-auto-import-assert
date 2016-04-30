@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/azu/babel-plugin-auto-import-assert/issues"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "babel plugin that auto import assert module.",
   "main": "lib/index.js",
   "directories": {
